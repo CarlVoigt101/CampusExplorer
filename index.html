@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Virtual Campus Explorer Ostfalia Salzgitter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta itemprop="name" content="Virtual Campus Explorer">
+    <meta itemprop="description" content="Virtual Campus Explorer - Ostfalia Salzgitter">
+    <meta itemprop="image" content="033.png">
+    <meta name="description" content="Virtual Campus Explorer - Ostfalia Salzgitter" />
+
+    <link rel="icon" type="image/png" href="/assets/LogoCamp.png">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+
+        body {
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            overflow: hidden; /* disable scrolling / rubberband effect on mobile */
+        }
+
+        canvas {
+            display: block;
+            position: absolute;
+            outline:0;
+        }
+        #start {
+            position: absolute;
+            width: 10vw;
+            height: 3vw;
+            left: 10vw;
+            bottom: 10vw;
+            background-color: transparent;
+            /* background-color: rgba(213, 252, 121, 0.5); */
+            /* color: rgba(47, 62, 91, 1); */
+            color: rgba(255, 255, 255, 1);
+            border: 0.052vw solid;
+            border-radius: 1.667vw; 
+            
+            font-family: Roboto;
+            font-size: 1.250vw;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.458vw;
+            letter-spacing: -0.004em;
+            text-align: left;
+            cursor: pointer;
+        }
+        #start:hover{
+            background-color: rgba(255, 255, 255, 0.145);
+        }
+        h1{
+            margin: 0px;
+            padding: 0px;
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 7vw;
+            line-height: 108%;
+            /* or 156px */
+            letter-spacing: -0.015em;
+            text-transform: capitalize;
+            /* color: #2F3E5B; */
+            color: rgba(255, 255, 255, 1);
+        }
+        h2{
+            margin: 0px;
+            padding: 0px;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 4vw;
+            line-height: 4.896vw;
+            text-transform: capitalize;
+            /* color: #2F3E5B; */
+            color: rgba(255, 255, 255, 1);
+        }
+        #HeadLine {
+            position: absolute;
+            text-align: left;
+            margin-top: 8vw;
+            margin-left: 10vw;
+            padding: 0px;
+        }
+        #SubHeadLine {
+            position: absolute;
+            text-align: left;
+            margin-left: 10vw;
+            bottom: 18vw;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .navContainer{
+            position: absolute;
+            z-index: 1;
+            top: 1.823vw;
+            right: 9.375vw;
+            height: 1vw;
+            width: 30vw;
+            display: flex;
+            justify-content: space-between;
+            /* background-color: rgba(150, 230, 161, 0.3); */
+            }
+        .home{
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            }
+         .home:hover{
+            cursor: default;
+            }
+         .about{
+            text-decoration: none;
+            text-decoration-thickness: 2px;
+            }
+         .about:hover{
+            cursor: pointer;
+            text-decoration: underline;
+            }
+         .contact{
+            text-decoration: none;
+            text-decoration-thickness: 2px;
+            }
+         .contact:hover{
+            text-decoration: underline;
+            cursor: pointer;
+            }
+        .dreiD{
+            text-decoration: none;
+            text-decoration-thickness: 2px;
+            }
+        .dreiD:hover{
+            text-decoration: underline;
+            cursor: pointer;
+            }
+        * {
+            /* disable on touch highlights of html elements, especially on mobile! */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            box-sizing: border-box;
+            width: 100vw;
+            padding: 15px;
+            text-align: right;
+            font-size: 0.8vw;
+            color: var(--highlight-color);
+            font-family: raleway;
+            font-weight: 400;
+        }
+
+        footer a,
+        footer a:active {
+            color: var(--highlight-color);
+        }
+        .impressum{
+            text-align: end;
+        }
+        .impressum:hover{
+            text-decoration: underline;
+
+        }
+        .copyright-text{
+            position:absolute;
+            text-align: start;
+            margin: 0px;
+        }
+        .carl:hover{
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <canvas id="glcanvas" width="100vw" height="100vh" tabindex="1"></canvas>
+    <button id="start" onclick="window.location.href = 'main.html'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;START 
+        <img src="assets/Vector (Stroke).svg" style="float:right;margin-right:0.667vw;margin-top: 0.25vw; width: 1.35vw; height: auto;">
+    </button>
+    <div id="HeadLine">
+            <h1><i>VIRTUAL CAMPUS</i><br>EXPLORER</h1>
+        </div>
+        <div id="SubHeadLine">
+            <h2>OSTFALIA SALZGITTER</h2>
+        </div>
+        <div class="navContainer">
+            <a class="home" href="index.html">STARTSEITE</a>
+            <a class="dreiD" href="main.html">3D MODELL</a>
+            <a class="about" href="about.html">ÜBER DAS PROJEKT</a>
+            <a class="contact" href="contact.html">KONTAKT</a>
+            </div>
+    <footer>
+        <!-- <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+            <a calss="carl" href="https://carlvoigt.de/">Carl Voigt</a>
+               
+        </p> -->
+        <a class="impressum" href="impressum.html">IMPRESSUM</a>
+    </footer>
+
+    <libs/>
+    <script type="text/javascript" src="js/patch.js" async></script>
+    <corelibs/>
+
+    <script>
+
+        // disable rubberband effect on mobile devices
+        document.getElementById('glcanvas').addEventListener('touchmove', (e)=>{ e.preventDefault(); }, false);
+
+
+        function patchInitialized(patch) {
+            // You can now access the patch object (patch), register variable watchers and so on
+        }
+
+        function patchFinishedLoading(patch) {
+            // The patch is ready now, all assets have been loaded
+        }
+
+        document.addEventListener('CABLES.jsLoaded', function (event) {
+            CABLES.patch = new CABLES.Patch({
+                patch: CABLES.exportedPatch,
+                prefixAssetPath: '',
+                glCanvasId: 'glcanvas',
+                glCanvasResizeToWindow: true,
+                onPatchLoaded: patchInitialized,
+                onFinishedLoading: patchFinishedLoading,
+            });
+        });
+    </script>
+</body>
+
+</html>

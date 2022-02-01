@@ -1052,24 +1052,38 @@ video{
 }
 
 .impressum{
-  position: absolute;
-  text-align: right;
-  font-size: 0.8vw;
+  position: relative;
+  font-size: 0.7vw;
   text-decoration: none;
   font-family: raleway;
   font-weight: 400;
-  right: 1vw;
-  margin-top: 35.8vw;
+}
+.datenschutz{
+  position: relative;
+  font-size: 0.7vw;
+  text-decoration: none;
+  font-family: raleway;
+  font-weight: 400;
 }
 .impressum:hover{
   text-decoration: underline;
 }
+.datenschutz:hover{
+  text-decoration: underline;
+}
 footer{
-  position: absolute;
-  right: 1vw;
-  bottom:  0vw;
-  height: 2vw;
-  width: 5vw;
-  margin: 0px;
+  position: relative;
+  height: 1vw;
+  width: 97vw;
   padding: 0px;
+  margin-top: 46.85vw;
+  text-align: right;
+}
+.footerabout{
+  position: relative;
+  height: 1vw;
+  width: 97vw;
+  padding: 0px;
+  margin-top: 5vw;
+  text-align: right;
 }

@@ -614,7 +614,7 @@ button:hover {
   }
 
 .a-enter-vr-button{
-  left: 50%;
+  display: none;
 }
 .Teleport{
   z-index: 3;
